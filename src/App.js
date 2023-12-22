@@ -7,9 +7,11 @@ const messages = [
 ];
 
 export default function App() {
-  return (<div>
-    <Steps />
-  </div>);
+  return (
+    <div>
+      <Steps />
+    </div>
+  );
 }
 
 function Steps() {
@@ -43,15 +45,14 @@ function Steps() {
           </p>
 
           <div className="buttons">
-            <Button bgColor="#7950f2"
-              textColor="#fff"
-              onClick={handlePrevious}
-              text="Previous" />
-            <Button bgColor="#7950f2"
-              textColor="#fff"
-              onClick={handleNext}
-              text="Next" />
-            
+            <Button bgColor="#7950f2" textColor="#fff" 
+            onClick={handlePrevious}>
+              <span>👈</span>Previous
+            </Button>
+            <Button bgColor="#7950f2" textColor="#fff"
+             onClick={handleNext}>
+              Next<span>👉</span><span>  ...❤️</span>
+            </Button>
           </div>
         </div>
       )}
@@ -59,19 +60,13 @@ function Steps() {
   );
 }
 
-function Button({ textColor, bgColor, onClick, text }) {
-  return <button style={{ backgroundColor: bgColor, color: textColor }}
-    onClick={onClick}
-  >
-    {text}
-  </button>
-
+function Button({ textColor, bgColor, onClick, children }) {
+  return (
+    <button
+      style={{ backgroundColor: bgColor, color: textColor }}
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 }
-
-
-
-
-
-
-
-
